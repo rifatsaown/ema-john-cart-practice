@@ -44,16 +44,16 @@ const Hero = () => {
   return (
     <div>
       <div className="grid grid-cols-5 gap-4 mt-3">
-        <div className="col-span-4">
-          <div>
-            <div className="grid grid-cols-3 gap-4">
+        <div className="col-span-1 md:col-span-4">
+          
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {products.map((product, id) => (
                 <Product  buttonHandler={buttonHandler}  product={product} key={id} />
               ))}
             </div>
-          </div>
+          
         </div>
-        <div className=" bg-orange-200 col-span-1 rounded-t-[20px]">
+        <div className=" hidden md:block bg-orange-200 col-span-1 rounded-t-[20px]">
           <div className="sticky top-0">
             <Cart cart={cart} />
           </div>

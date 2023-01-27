@@ -1,7 +1,11 @@
 import React from "react";
-
+import { BsCartPlus } from "react-icons/bs";
 const Product = ({ product, buttonHandler }) => {
   const { img, name, price, ratings, seller} = product;
+  const rating = [];
+  for (let i = 0; i < ratings; i++) {
+    rating.push(<span key={i}>⭐</span>);
+  }
   return (
     <>
       <div className="card w-96 bg-base-100 shadow-xl">
@@ -12,13 +16,13 @@ const Product = ({ product, buttonHandler }) => {
           <h2 className="card-title">{name}</h2>
           <p>Price : {price}</p>
           <p>Seller : {seller}</p>
-          <p>Rating : {ratings} Stars</p>
+          <p className="flex alig">Rating : {rating}</p>
           <div className="card-actions">
             <button
               onClick={() => buttonHandler(product)}
               className="btn text-white border-none bg-orange-400"
             >
-              Buy Now
+              Buy Now &nbsp; <BsCartPlus/>
             </button>
           </div>
         </div>
