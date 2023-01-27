@@ -1,7 +1,7 @@
 import React from "react";
 
-const Product = ({ product }) => {
-  const { img, name, price, ratings, seller } = product;
+const Product = ({ product, buttonHandler }) => {
+  const { img, name, price, ratings, seller} = product;
   return (
     <>
       <div className="card w-96 bg-base-100 shadow-xl">
@@ -14,7 +14,10 @@ const Product = ({ product }) => {
           <p>Seller : {seller}</p>
           <p>Rating : {ratings} Stars</p>
           <div className="card-actions">
-            <button className="btn text-white border-none bg-orange-400">
+            <button
+              onClick={() => buttonHandler(product)}
+              className="btn text-white border-none bg-orange-400"
+            >
               Buy Now
             </button>
           </div>
