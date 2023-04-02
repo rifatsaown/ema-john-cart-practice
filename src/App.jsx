@@ -3,7 +3,7 @@ import Hero from "./Components/Hero/Hero";
 
 function App() {
   return (
-    <div >
+    <div className="App">
       <Header/>
       <Hero/>
     </div>
